@@ -1,0 +1,142 @@
+Music Data Analytics & Market Intelligence
+
+    Soundcharts:
+    It provides a 360-degree real-time view of artist
+    performance by tracking global charts, radio
+    airplay, and social media milestones across dozens 
+    of platforms in a single dashboard.
+
+    Chartmetric:
+    This platform combines cross-platform data from
+    streaming and social media with proprietary metrics 
+    like "Career Stage" and "Recent Momentum" to help
+    industry professionals identify emerging trends and 
+    scout talent.
+
+Core Music & Streaming APIs
+
+    Spotify Web API:
+    The industry standard for accessing a massive global
+    catalog, artist metadata, user playlists, and
+    detailed audio features (e.g., danceability, energy).
+    
+    Apple Music API:
+    Best for integrating within the Apple ecosystem,
+    providing high-fidelity audio streaming and library
+    access.
+    
+    SoundCloud API:
+    Primary source for independent, emerging, and
+    user-generated content.
+    
+    Deezer API:
+    Offers extensive global coverage and is often noted
+    for its robust developer tools and personalized
+    recommendations.
+    
+    YouTube Music API:
+    Essential for applications that bridge audio tracks
+    with official music videos and live performance footage. 
+
+Concerts & Live Events APIs
+
+    Ticketmaster Discovery API:
+    The most powerful tool for real-time data on major
+    global tours, ticket availability, and venue details.
+    
+    Songkick API:
+    Provides access to a database of over 6 million
+    upcoming and past concerts, searchable by artist,
+    venue, and date.
+    
+    Bandsintown API:
+    Highly regarded for its extensive database of indie
+    artists and local live  music events.
+
+    JamBase API:
+    A RESTful API focused specifically on live music data
+    and festivals, known for high reliability.
+    
+    PredictHQ:
+    Uses an intelligent algorithm to rank event 
+    importance, useful for predicting business impact
+    from major concerts. 
+
+Overseas & K-Pop APIs
+While major platforms like Spotify track K-pop
+extensively, these APIs provide deeper regional data: 
+
+    JioSaavn API:
+    Specialized for the Indian market, covering Bollywood
+    and regional Indian genres.
+    
+    Gaana API:
+    Another critical tool for retrieving song information
+    from the Indian music streaming giant Gaana.
+    
+    KKBOX API:
+    The leading API for East Asian markets, offering
+    extensive libraries for Mandarin and Cantonese music
+    popular in Taiwan, Hong Kong, and Southeast Asia.
+    
+    Viberate:
+    A 2025 favorite for global music analytics, including
+    detailed social and streaming stats for major K-pop
+    groups like BTS and Blackpink. 
+
+Specialized & AI Music APIs (New for 2025)
+
+    Wondera API:
+    A top-rated 2025 AI API for conversational music
+    creation, vocal swaps, and stem separation.
+    
+    Musixmatch API:
+    The leading source for synchronized, real-time lyrics
+    and translations.
+    
+    MusicBrainz:
+    An open-source, community-maintained encyclopedia
+    that is the "gold standard" for accurate, non-commercial
+    music metadata
+
+    Discogs:
+    It offers access to a massive, user-generated catalog
+    of global music metadata, specializing in detailed
+    information for vinyl, CDs, and rare releases including
+    master versions and artist discographies.
+
+    Last.fm:
+    Known for its "scrobbling" feature, this API tracks user
+    listening habits across various streaming services to
+    generate detailed personal listening profiles, artist
+    recommendations, and global charts.
+
+    Wikipedia:
+    It provides structured access to millions of crowdsourced
+    articles, allowing developers to programmatically extract
+    artist biographies, curated discography tables, and
+    historical music timelines.
+
+    Wikidata:
+    As the data backbone for Wikipedia, it offers
+    machine-readable, linked data for music entities (artists,
+    albums, tracks) that is natively structured and easier
+    to query for complex relationships than raw Wikipedia text.
+
+    DBpedia:
+    This project algorithmically converts Wikipedia’s
+    "Infobox" data into a standardized RDF format, making it
+    highly effective for semantic searches and connecting music
+    data across the broader web.
+
+    Wikipedia Enterprise API:
+    A high-volume, paid service designed for 2025 AI and
+    enterprise applications that provides real-time updates,
+    parsed HTML tables, and credibility signals for
+    large-scale data ingestion. 
+
+    Genius:
+    Provides access to a massive database of song lyrics
+    along with crowdsourced and artist-verified annotations
+    that explain the meaning and cultural context behind
+    the music.
