@@ -1,0 +1,89 @@
+import requests
+
+headers = {
+    "x-app-id": "soundcharts",
+    "x-api-key": "soundcharts",
+    "Content-Type": "application/json"
+}
+
+# FULL URL with the https:// scheme
+url = 'https://customer.api.soundcharts.com/api/v2/top/radios'
+
+payload = {
+    "sort": {
+        "platform": "soundcharts",
+        "metricType": "reach",
+        "period": "month",
+        "sortBy": "total",
+        "order": "desc"
+    }
+}
+
+response = requests.post(url, headers=headers, json=payload)
+
+if response.status_code == 200:
+    print(response.json())
+else:
+    print(f"Error {response.status_code}: {response.text}")
+
+# -------------------------------------
+# put in dataframe
+
+import pandas as pd
+
+def process_radios_to_dataframe(api_response):
+    data = []
+    
+    for item in api_response.get('items', []):
+        radio_info = item.get('radio', {})
+        
+        # Process social metrics
+        for social_metric in item.get('social', []):
+            row = {
+                'name': radio_info.get('name'),
+                'country': radio_info.get('countryCode'),
+                'platform_metric': f"{social_metric.get('platformCode')}/{social_metric.get('metricType')}",
+                'total': social_metric.get('total'),
+                'week': social_metric.get('week'),
+                'month': social_metric.get('month'),
+                'quarter': social_metric.get('quarter')
+            }
+            data.append(row)
+        
+        # Process custom metrics
+        for custom_metric in item.get('custom', []):
+            row = {
+                'name': radio_info.get('name'),
+                'country': radio_info.get('countryCode'),
+                'platform_metric': f"{custom_metric.get('platformCode')}/{custom_metric.get('metricType')}",
+                'total': custom_metric.get('total'),
+                'week': custom_metric.get('week'),
+                'month': custom_metric.get('month'),
+                'quarter': custom_metric.get('quarter')
+            }
+            data.append(row)
+    
+    return pd.DataFrame(data)
+
+# Usage
+df = process_radios_to_dataframe(response.json())
+print(df.head())
+
+# -------------------------------------
+'''
+In [35]: response.json()['items'][0]['radio'].keys()
+Out[35]: dict_keys(['slug', 'name', 'cityName', 'countryCode', 'countryName', 'timeZone', 'reach', 'genres', 'trackAge'])
+
+In [36]: response.json()['items'][0]['custom'][0].keys()
+Out[36]: dict_keys(['platformCode', 'metricType', 'total', 'week', 'month', 'quarter'])
+
+In [37]: response.json()['items'][0]['social'][0].keys()
+Out[37]: dict_keys(['platformCode', 'metricType', 'total', 'week', 'month', 'quarter'])In [35]: response.json()['items'][0]['radio'].keys()
+Out[35]: dict_keys(['slug', 'name', 'cityName', 'countryCode', 'countryName', 'timeZone', 'reach', 'genres', 'trackAge'])
+
+In [36]: response.json()['items'][0]['custom'][0].keys()
+Out[36]: dict_keys(['platformCode', 'metricType', 'total', 'week', 'month', 'quarter'])
+
+In [37]: response.json()['items'][0]['social'][0].keys()
+Out[37]: dict_keys(['platformCode', 'metricType', 'total', 'week', 'month', 'quarter'])
+'''
